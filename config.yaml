@@ -1,0 +1,53 @@
+data_file: 'format.csv'
+demographics: 'demographics.csv'
+
+flip_sign:
+    Anxiety_depression: 1
+    Mobility: 1
+    Pain_discomfort: 1
+    Self_Care: 1
+    Usual_activities: 1
+    index_score: -1
+    VAS_score: -1
+
+change_value:
+    Anxiety_depression: 1
+    Mobility: 1
+    Pain_discomfort: 1
+    Self_Care: 1
+    Usual_activities: 1
+    index_score: 0.1
+    VAS_score: 10
+
+grouping:
+    all_patients: ['feature_name']
+    disease_group: ['feature_name', 'aaa']
+
+features:
+    - Anxiety_depression
+    - Mobility
+    - Pain_discomfort
+    - Self_Care
+    - Usual_activities
+    - index_score
+    - VAS_score
+
+analyses:
+    - all_patients
+    - disease_group
+
+treatment_arms:
+    - A
+    - B
+
+control_arm: C
+
+max_week: 68
+
+selection_criteria:
+    all-data: -100
+    worsening-only: 0
+
+data_selection:
+    - all-data
+    - worsening-only
